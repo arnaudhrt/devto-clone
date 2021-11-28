@@ -1,0 +1,22 @@
+$primary-blue: #3b49df;
+$hover-blue: #323ebe;
+$light-bg-hover: rgba(0, 0, 0, 0.04);
+$light-shadow: rgba(0, 0, 0, 0.1);
+$light-border: #d6d6d7;
+$hover-border: #a3a3a3;
+
+@mixin blue-btn {
+   height: 40px;
+   background: $primary-blue;
+   font-weight: 500;
+   padding: 8px 16px;
+   color: #fff;
+   border: none;
+   border-radius: 7px;
+   margin-right: 12px;
+   line-height: 16px;
+   cursor: pointer;
+   &:hover {
+      background: $hover-blue;
+   }
+}

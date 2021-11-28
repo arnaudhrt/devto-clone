@@ -1,0 +1,95 @@
+@import '../variables&mixins';
+@import '../components_styles/nav';
+
+header {
+   max-width: 1250px;
+   margin: 75px auto 30px;
+   background: #fff;
+   border-radius: 7px;
+   box-shadow: 0 0 0 1px $light-shadow;
+   border-top: 16px solid #f7df1e;
+   display: flex;
+   padding: 24px;
+   .logo {
+      width: 64px;
+      height: 64px;
+      transform: rotate(5deg);
+      margin-right: 16px;
+   }
+   .text {
+      flex-grow: 1;
+      .row-top {
+         display: flex;
+         justify-content: space-between;
+         h1 {
+            font-size: 30px;
+            line-height: 45px;
+            font-weight: 700;
+         }
+         button {
+            @include blue-btn;
+            &.active {
+               border: 2px solid $light-border;
+               background: transparent;
+               color: #090909;
+               &:hover {
+                  background: $light-bg-hover;
+                  border-color: $hover-border;
+               }
+            }
+         }
+      }
+      p {
+         margin-top: 16px;
+         max-width: 75%;
+      }
+   }
+}
+
+main {
+  display: flex;
+  max-width: 1250px;
+  margin: 0 auto;
+  .left{
+    max-width: 280px;
+    .bloc {
+      margin-bottom: 16px;
+      padding: 16px;
+      padding-top: 0px;
+      border-bottom: 1px solid $light-shadow;
+      h2 {
+        padding: 8px 0;
+        font-family: monospace;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+      }
+      p {
+        line-height: 20px;
+        font-size: 15px;
+        margin-top: 8px
+      }
+      button {
+        @include blue-btn;
+        font-size: 14px;
+        padding: 6px 13px;
+        font-weight: 400;
+        margin-top: 8px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li img {
+          border-radius: 50%;
+          width: 48px;
+          height: 48px;
+          margin-right: 12px;
+          margin-bottom: 12px;
+        }
+      }
+    }
+    .end {
+      padding-left: 16px;
+    }
+  }
+}
