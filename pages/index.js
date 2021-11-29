@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Nav from '../components/Nav'
 import { useState } from 'react'
+import Articles from '../components/Articles'
 
 export default function Home() {
    const [isFollow, setIsFollow] = useState('false')
@@ -30,30 +31,80 @@ export default function Home() {
             </div>
          </header>
          <main>
-            <div className="left">
+            <div className="left-col">
                <div className="bloc">
                   <h2>submission guidelines</h2>
-                  <p>Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a JavaScript framework or library, just remember to include the framework's tag as well.</p>
+                  <p>
+                     Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: '700' }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework's tag as well.
+                  </p>
                   <button>Create Post</button>
                </div>
                <div className="bloc">
                   <h2>about #javascript</h2>
-                  <p>How should the tag be written? All lower-case letters for the tag:<br /> <span>javascript</span>.</p>
+                  <p>
+                     How should the tag be written? All lower-case letters for the tag:
+                     <br /> <span style={{ background: 'rgba(0,0,0,0.1)', padding: '0 5px', borderRadius: '50px' }}>javascript</span>.
+                  </p>
                </div>
                <div className="bloc">
-                 <h2>tag moderators</h2>
-                 <ul>
-                   <li><img src="/assets/mod-1.jpeg" alt="Moderateur profil picture" /></li>
-                   <li><img src="/assets/mod-2.png" alt="Moderateur profil picture" /></li>
-                   <li><img src="/assets/mod-3.png" alt="Moderateur profil picture" /></li>
-                   <li><img src="/assets/mod-4.jpeg" alt="Moderateur profil picture" /></li>
-                   <li><img src="/assets/mod-5.jpeg" alt="Moderateur profil picture" /></li>
-                 </ul>
+                  <h2>tag moderators</h2>
+                  <ul>
+                     <li>
+                        <img src="/assets/mod-1.jpeg" alt="Moderateur profil picture" />
+                     </li>
+                     <li>
+                        <img src="/assets/mod-2.png" alt="Moderateur profil picture" />
+                     </li>
+                     <li>
+                        <img src="/assets/mod-3.png" alt="Moderateur profil picture" />
+                     </li>
+                     <li>
+                        <img src="/assets/mod-4.jpeg" alt="Moderateur profil picture" />
+                     </li>
+                     <li>
+                        <img src="/assets/mod-5.jpeg" alt="Moderateur profil picture" />
+                     </li>
+                  </ul>
                </div>
                <p className="end">51634 Posts Published</p>
             </div>
-            <div className="post"></div>
-            <div className="right"></div>
+            <div className="middle">
+               <div className="top-line">
+                  <h2>Post</h2>
+                  <ul className="sort">
+                     <li className="active">Feed</li>
+                     <li>Week</li>
+                     <li>Month</li>
+                     <li>Year</li>
+                     <li>Infinty</li>
+                     <li>Latest</li>
+                  </ul>
+               </div>
+               <div className="articles">
+                  <Articles />
+               </div>
+            </div>
+            <div className="right-col">
+               <h2>#discuss</h2>
+               <div className="discuss-wp">
+                  <div className="discuss-item">
+                     <h3>Mongodb-native over mongoose?</h3>
+                     <p>47 comments</p>
+                  </div>
+                  <div className="discuss-item">
+                     <h3>How to Add BUY ME A COFFEE Button in DEV.TO Blog</h3>
+                     <p>6 comments</p>
+                  </div>
+                  <div className="discuss-item">
+                     <h3>Do you still work with jQuery?</h3>
+                     <p>67 comments</p>
+                  </div>
+                  <div className="discuss-item">
+                     <h3>JavaScript is DEAD 💀</h3>
+                     <p>40 comments</p>
+                  </div>
+               </div>
+            </div>
          </main>
 
          <footer>

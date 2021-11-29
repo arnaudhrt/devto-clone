@@ -1,5 +1,6 @@
 @import '../variables&mixins';
 @import '../components_styles/nav';
+@import '../components_styles/article';
 
 header {
    max-width: 1250px;
@@ -47,49 +48,135 @@ header {
 }
 
 main {
-  display: flex;
-  max-width: 1250px;
-  margin: 0 auto;
-  .left{
-    max-width: 280px;
-    .bloc {
-      margin-bottom: 16px;
+   display: flex;
+   max-width: 1250px;
+   margin: 0 auto;
+   .left-col {
+      max-width: 280px;
+      .bloc {
+         margin-bottom: 16px;
+         padding: 16px;
+         padding-top: 0px;
+         border-bottom: 1px solid $light-shadow;
+         h2 {
+            padding: 8px 0;
+            font-family: 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+         }
+         p {
+            line-height: 20px;
+            font-size: 15px;
+            margin-top: 8px;
+         }
+         button {
+            @include blue-btn;
+            font-size: 14px;
+            padding: 6px 13px;
+            font-weight: 400;
+            margin-top: 8px;
+         }
+         ul {
+            display: flex;
+            flex-wrap: wrap;
+            li img {
+               border-radius: 50%;
+               width: 48px;
+               height: 48px;
+               margin-right: 12px;
+               margin-bottom: 12px;
+            }
+         }
+      }
+      .end {
+         padding-left: 16px;
+      }
+   }
+   .middle {
+      flex-grow: 1;
       padding: 16px;
-      padding-top: 0px;
-      border-bottom: 1px solid $light-shadow;
+      padding-top: 0;
+      .top-line {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         h2 {
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700;
+         }
+         .sort {
+            display: flex;
+            li {
+               padding: 8px;
+               margin: 4px;
+               position: relative;
+               cursor: pointer;
+               transition: background 100ms ease-out;
+               border-radius: 6px;
+               &:hover {
+                  background: rgba(59, 73, 223, 0.1);
+               }
+               &.active {
+                  font-weight: 500;
+                  border-radius: 6px 6px 0 0;
+                  &::after {
+                     content: '';
+                     display: block;
+                     position: absolute;
+                     top: 100%;
+                     left: 8px;
+                     right: 8px;
+                     height: 3px;
+                     background: $primary-blue;
+                     transition: all 100ms ease-out;
+                  }
+                  &:hover::after {
+                     left: 0;
+                     right: 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+   .right-col {
+      max-width: 280px;
+      flex-grow: 1;
+      padding: 16px;
+      padding-top: 0;
       h2 {
-        padding: 8px 0;
-        font-family: monospace;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
+         padding: 8px 0;
+         font-family: 'Menlo', monospace;
+         font-size: 14px;
+         line-height: 20px;
+         font-weight: 700;
       }
-      p {
-        line-height: 20px;
-        font-size: 15px;
-        margin-top: 8px
+      .discuss-wp {
+         border-bottom: 1px solid $light-shadow;
+         .discuss-item {
+            padding: 16px;
+            color: #242424;
+            cursor: pointer;
+            margin-bottom: 16px;
+            h3 {
+               color: inherit;
+               font-size: 15px;
+               line-height: 20px;
+               margin-bottom: 5px;
+            }
+            p {
+               color: #717171;
+               font-size: 13px;
+               line-height: 20px;
+            }
+            &:hover {
+               opacity: 0.9;
+               background: #fff;
+               color: #323ebe;
+            }
+         }
       }
-      button {
-        @include blue-btn;
-        font-size: 14px;
-        padding: 6px 13px;
-        font-weight: 400;
-        margin-top: 8px;
-      }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        li img {
-          border-radius: 50%;
-          width: 48px;
-          height: 48px;
-          margin-right: 12px;
-          margin-bottom: 12px;
-        }
-      }
-    }
-    .end {
-      padding-left: 16px;
-    }
-  }
+   }
 }
