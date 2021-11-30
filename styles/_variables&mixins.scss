@@ -20,3 +20,23 @@ $hover-border: #a3a3a3;
       background: $hover-blue;
    }
 }
+@mixin nav-link {
+   font-size: 18px;
+   line-height: 27px;
+   font-weight: 400;
+   padding: 8px;
+   margin: 4px;
+   position: relative;
+   cursor: pointer;
+   transition: background 100ms ease-out;
+   border-radius: 6px;
+   color: #575757;
+   &.active {
+      color: initial;
+      font-weight: 700;
+   }
+   &:hover {
+      background: rgba(255, 255, 255, 0.5);
+      color: $primary-blue;
+   }
+}

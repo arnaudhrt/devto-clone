@@ -68,7 +68,7 @@ export default function Home(props) {
                   <p>
                      Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: '700' }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework's tag as well.
                   </p>
-                  <button onClick={() => addArticles()}>Create Post</button>
+                  <button>Create Post</button>
                </div>
                <div className="bloc">
                   <h2>about #javascript</h2>
@@ -101,15 +101,9 @@ export default function Home(props) {
             </div>
             <div className="middle">
                <div className="top-line">
-                  <h2>Post</h2>
-                  <ul className="sort">
-                     <li className="active">Feed</li>
-                     <li>Week</li>
-                     <li>Month</li>
-                     <li>Year</li>
-                     <li>Infinty</li>
-                     <li>Latest</li>
-                  </ul>
+                  <h2 className="active">Relevant</h2>
+                  <h2>Latest</h2>
+                  <h2>Top</h2>
                </div>
                <div className="articles">
                   <Articles data={fistArticles} />

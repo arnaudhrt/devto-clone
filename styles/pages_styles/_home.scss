@@ -99,45 +99,8 @@ main {
       padding-top: 0;
       .top-line {
          display: flex;
-         justify-content: space-between;
-         align-items: center;
          h2 {
-            font-size: 20px;
-            line-height: 30px;
-            font-weight: 700;
-         }
-         .sort {
-            display: flex;
-            li {
-               padding: 8px;
-               margin: 4px;
-               position: relative;
-               cursor: pointer;
-               transition: background 100ms ease-out;
-               border-radius: 6px;
-               &:hover {
-                  background: rgba(59, 73, 223, 0.1);
-               }
-               &.active {
-                  font-weight: 500;
-                  border-radius: 6px 6px 0 0;
-                  &::after {
-                     content: '';
-                     display: block;
-                     position: absolute;
-                     top: 100%;
-                     left: 8px;
-                     right: 8px;
-                     height: 3px;
-                     background: $primary-blue;
-                     transition: all 100ms ease-out;
-                  }
-                  &:hover::after {
-                     left: 0;
-                     right: 0;
-                  }
-               }
-            }
+            @include nav-link;
          }
       }
    }
