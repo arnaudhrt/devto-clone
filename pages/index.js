@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
 import Articles from '../components/Articles'
+import Link from 'next/link'
 
 export const getStaticProps = async () => {
    const req = await fetch('https://dev.to/api/articles?per_page=15&tag=javascript')
@@ -68,7 +69,9 @@ export default function Home(props) {
                   <p>
                      Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: '700' }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework's tag as well.
                   </p>
-                  <button>Create Post</button>
+                  <Link href="/new">
+                     <button>Create Post</button>
+                  </Link>
                </div>
                <div className="bloc">
                   <h2>about #javascript</h2>

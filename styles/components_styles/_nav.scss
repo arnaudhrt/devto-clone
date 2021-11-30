@@ -18,12 +18,7 @@ nav {
       .left {
          display: flex;
          .logo {
-            fill: #000;
-            cursor: pointer;
-            margin-right: 15px;
-            &:hover {
-               fill: #3d3d3d;
-            }
+            @include main-logo;
          }
          .search-wp {
             position: relative;

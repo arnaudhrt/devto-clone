@@ -5,14 +5,14 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import Articles from '../components/Articles'
 
-export default function search() {
+export default function Search() {
    const router = useRouter()
    const queryParams = router.query.req
    const [articles, setArticles] = useState([])
    useEffect(() => {
       if (!router.isReady) return
       const fetchData = async () => {
-         const req = await fetch('https://dev.to/api/articles?per_page=200&tag=javascript')
+         const req = await fetch('https://dev.to/api/articles?per_page=500&tag=javascript')
          const data = await req.json()
          return setArticles(
             data.filter((el) => {
