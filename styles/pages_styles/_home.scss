@@ -154,12 +154,12 @@ main {
          font-weight: 700;
       }
       .discuss-wp {
+         padding-bottom: 16px;
          border-bottom: 1px solid $light-shadow;
          .discuss-item {
             padding: 16px;
             color: #242424;
             cursor: pointer;
-            margin-bottom: 16px;
             h3 {
                color: inherit;
                font-size: 15px;

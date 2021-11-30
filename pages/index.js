@@ -1,10 +1,41 @@
 import Head from 'next/head'
 import Nav from '../components/Nav'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Articles from '../components/Articles'
 
-export default function Home() {
+export const getStaticProps = async () => {
+   const req = await fetch('https://dev.to/api/articles?per_page=15&tag=javascript')
+   const data = await req.json()
+   return {
+      props: {
+         data
+      }
+   }
+}
+
+export default function Home(props) {
    const [isFollow, setIsFollow] = useState('false')
+   const [fistArticles, setFistArticles] = useState(props.data)
+   let moreArticles = props.data
+
+   const addArticles = () => {
+      setFistArticles([...fistArticles, ...moreArticles])
+   }
+
+   useEffect(() => {
+      const getScroll = () => {
+         const scrollPos = Math.round(((window.innerHeight + window.scrollY) * 100) / document.body.offsetHeight)
+         if (scrollPos >= 85) {
+            addArticles()
+         }
+      }
+      window.addEventListener('scroll', getScroll)
+
+      return function cleanupListener() {
+         window.removeEventListener('scroll', getScroll)
+      }
+   }, [fistArticles])
+
    return (
       <>
          <Head>
@@ -37,7 +68,7 @@ export default function Home() {
                   <p>
                      Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: '700' }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework's tag as well.
                   </p>
-                  <button>Create Post</button>
+                  <button onClick={() => addArticles()}>Create Post</button>
                </div>
                <div className="bloc">
                   <h2>about #javascript</h2>
@@ -81,7 +112,7 @@ export default function Home() {
                   </ul>
                </div>
                <div className="articles">
-                  <Articles />
+                  <Articles data={fistArticles} />
                </div>
             </div>
             <div className="right-col">

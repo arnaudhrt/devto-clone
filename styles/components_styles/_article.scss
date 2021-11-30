@@ -45,6 +45,10 @@
          line-height: 30px;
          font-weight: 700;
          margin-bottom: 4px;
+         cursor: pointer;
+         &:hover {
+            color: $primary-blue;
+         }
       }
       .tags {
          margin-left: -7px;
