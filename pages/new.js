@@ -29,15 +29,19 @@ export default function New() {
          </div>
 
          <div className="form">
-           <form>
-             <button className="">Add a cover image</button>
-             <input type="text" placeholder="New post title here..."/>
-             <input type="text" placeholder="Add up to 4 tags..."/>
-             <img src="/assets/tools-post.png" alt="tools post" />
-             <textarea placeholder="Write your post content here..."></textarea>
-           </form>
-           <button>Publish</button>
-           <button>Save draft</button>
+            <form>
+               <div className="form-head">
+                  <button className="cover">Add a cover image</button>
+                  <input className="title" type="text" placeholder="New post title here..." />
+                  <input className="tags" type="text" placeholder="Add up to 4 tags..." />
+               </div>
+               <img src="/assets/tools-post.png" alt="tools post" />
+               <textarea placeholder="Write your post content here..."></textarea>
+            </form>
+            <div className="form-action">
+               <button className="publish">Publish</button>
+               <button className="draft">Save draft</button>
+            </div>
          </div>
       </>
    )
