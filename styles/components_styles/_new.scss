@@ -1,0 +1,99 @@
+.new-article {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: #efefef;
+   .header {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px 25px;
+      display: flex;
+      align-items: center;
+      .logo {
+         @include main-logo;
+      }
+      h2 {
+         font-weight: 500;
+      }
+   }
+
+   .form {
+      max-width: 805px;
+      margin: 0 auto;
+      form {
+         width: 100%;
+         height: calc(100vh - 66px - 80px);
+         background: #fff;
+         border-radius: 6px;
+         border: 1px solid $light-border;
+         .form-head {
+            padding: 32px 64px;
+            display: flex;
+            flex-direction: column;
+         }
+         .cover {
+            width: max-content;
+            font-weight: 500;
+            border: 2px solid $light-border;
+            border-radius: 6px;
+            padding: 6px 14px;
+            background: transparent;
+            outline: none;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+         }
+         .title {
+            display: block;
+            height: 60px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 48px;
+            line-height: 60px;
+            font-weight: 800;
+            margin-bottom: 12px;
+         }
+         .tags-wp {
+            display: flex;
+            width: 100%;
+            gap: 15px;
+
+            .tags {
+               display: block;
+               width: 160px;
+               background: transparent;
+               border: none;
+               outline: none;
+               font-family: 'Menlo', monospace;
+            }
+         }
+         textarea {
+            padding: 32px 64px;
+            width: 100%;
+            border: none;
+            background: none;
+            outline: none;
+            font-family: 'Menlo', monospace;
+            resize: none;
+         }
+      }
+      .form-action {
+         padding: 20px 0;
+         .publish,
+         .draft {
+            @include blue-btn;
+         }
+         .draft {
+            background: #d6d6d7;
+            color: #3d3d3d;
+            position: relative;
+            &:hover {
+               background: #d6d6d7;
+            }
+         }
+      }
+   }
+}

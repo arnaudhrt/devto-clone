@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function Nav() {
+export default function Nav(props) {
    const [isOpen, setIsOpen] = useState('false')
-   const [searchValue, setSearchValue] = useState()
+   const [searchValue, setSearchValue] = useState("")
    return (
       <nav>
          <div className="nav-wp">
@@ -36,11 +36,9 @@ export default function Nav() {
                </div>
             </div>
             <div className="right">
-               <Link href="/new">
-                  <button className="create-post" type="button">
-                     Create Post
-                  </button>
-               </Link>
+               <button className="create-post" type="button" onClick={props.toggleNewArticle}>
+                  Create Post
+               </button>
                <div className="notif">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                      <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path>
@@ -55,11 +53,7 @@ export default function Nav() {
                      </li>
                      <div className="divider"></div>
                      <li>Dashboard</li>
-                     <li>
-                        <Link href="/new">
-                           <a>Create Post</a>
-                        </Link>
-                     </li>
+                     <li>Create Post</li>
                      <li>Reading List</li>
                      <li>Settings</li>
                      <div className="divider"></div>

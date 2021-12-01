@@ -1,0 +1,50 @@
+header {
+  max-width: 1250px;
+  margin: 75px auto 30px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 0 0 1px $light-shadow;
+  border-top: 16px solid #f7df1e;
+  display: flex;
+  padding: 24px;
+  .logo {
+     width: 64px;
+     height: 64px;
+     transform: rotate(5deg);
+     margin-right: 16px;
+  }
+  .text {
+     flex-grow: 1;
+     .row-top {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+           font-size: 30px;
+           line-height: 45px;
+           font-weight: 700;
+        }
+        button {
+           @include blue-btn;
+           &.active {
+              border: 2px solid $light-border;
+              background: transparent;
+              color: #090909;
+              &:hover {
+                 background: $light-bg-hover;
+                 border-color: $hover-border;
+              }
+           }
+        }
+     }
+     p {
+        margin-top: 16px;
+        max-width: 75%;
+     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+   header {
+      display: none;
+   }
+}

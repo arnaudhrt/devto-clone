@@ -30,6 +30,6 @@ img {
   display: block;
 }
 
+@import 'variables&mixins';
 @import 'pages_styles/home';
 @import 'pages_styles/search';
-@import 'pages_styles/new';

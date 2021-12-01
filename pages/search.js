@@ -1,13 +1,14 @@
-import React from 'react'
-import Nav from '../components/Nav'
-import Head from 'next/dist/shared/lib/head'
-import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/dist/client/router'
+import Head from 'next/dist/shared/lib/head'
+import Nav from '../components/Nav'
 import Articles from '../components/Articles'
 
 export default function Search() {
+   // Get query parameters
    const router = useRouter()
    const queryParams = router.query.req
+   // API Call with filtered data
    const [articles, setArticles] = useState([])
    useEffect(() => {
       if (!router.isReady) return
