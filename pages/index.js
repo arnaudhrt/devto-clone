@@ -47,7 +47,7 @@ export default function Home(props) {
    return (
       <>
          <Head>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="description" content="" />
             <title>Dev.to clone with Next.js</title>
@@ -72,7 +72,7 @@ export default function Home(props) {
                      <div className="bloc">
                         <h2>submission guidelines</h2>
                         <p>
-                           Client-side, server-side, it doesn't matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: '700' }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework's tag as well.
+                           Client-side, server-side, it doesn&apos;t matter. This tag should be used for anything JavaScript focused. If the topic is about a <i style={{ fontWeight: "700" }}>JavaScript</i> <i>framework</i> or <i>library</i>, just remember to include the framework&apos;s tag as well.
                         </p>
                         <button onClick={() => toggleNewArticle()}>Create Post</button>
                      </div>
